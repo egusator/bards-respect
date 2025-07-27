@@ -1,0 +1,21 @@
+name: bards
+services:
+  postgres:
+    image: postgres
+    container_name: bards-respect-database
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: bardsdb
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data
+
+  bard_respect_service:
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+    restart: unless-stopped
