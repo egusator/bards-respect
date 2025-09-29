@@ -7,13 +7,16 @@ spring:
     active: dev
   application-name: bards-respect-back
   datasource:
-    url: jdbc:postgresql://postgres:5432/bardsdb
+    url: jdbc:postgresql://postgres:5433/bardsdb
     username: postgres
     password: postgres
   jpa:
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
       ddl-auto: validate
+
   flyway:
     enabled: true
     locations: classpath:db/migration

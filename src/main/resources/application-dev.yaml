@@ -3,3 +3,6 @@ spring:
     compose:
       enabled: true
       file: docker-compose-local.yml
+logging:
+  level:
+    org.flywaydb: DEBUG
