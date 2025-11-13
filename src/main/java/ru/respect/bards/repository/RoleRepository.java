@@ -6,4 +6,5 @@ import ru.respect.bards.entities.Role;
 
 @Repository
 public interface RoleRepository extends JpaRepository<Role, Long> {
+
 }
